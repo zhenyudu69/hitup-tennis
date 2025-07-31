@@ -2,9 +2,6 @@
 
 // ——————————— Mantine Rich‑Text Editor (兼容 React 19) ———————————
 import "@mantine/core/styles.css";
-import "@mantine/tiptap/styles.css";
-import { MantineProvider } from "@mantine/core";
-import { RichTextEditor } from "@mantine/tiptap";
 
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -55,8 +52,6 @@ export default function QiuAppEditor() {
 
   /* --------------------- UI --------------------- */
   return (
-    <MantineProvider defaultColorScheme="light">
-
     <div className="min-h-screen bg-slate-100 p-6 grid md:grid-cols-2 gap-6">
       {/* —— 左侧：编辑区 —— */}
       <div className="space-y-8 overflow-y-auto pr-2">
@@ -69,7 +64,11 @@ export default function QiuAppEditor() {
         {/* 首页描述 */}
         <div className="space-y-2">
           <Label className="font-bold text-lg">首页描述</Label>
-          <RichTextEditor value={heroDesc} onChange={setHeroDesc} />
+          <textarea
+            className="w-full h-40 border rounded-md p-2"
+            value={heroDesc}
+            onChange={(e) => setHeroDesc(e.target.value)}
+          />
         </div>
 
         {/* 开发进度 */}
@@ -109,11 +108,12 @@ export default function QiuAppEditor() {
                   <Trash2 className="w-4 h-4" />
                 </Button>
               </div>
-              <RichTextEditor
+              <textarea
+                className="w-full h-40 border rounded-md p-2"
                 value={s.desc}
-                onChange={(val) => {
+                onChange={(e) => {
                   const copy = [...sections];
-                  copy[idx].desc = val;
+                  copy[idx].desc = e.target.value;
                   setSections(copy);
                 }}
               />
@@ -124,13 +124,21 @@ export default function QiuAppEditor() {
         {/* 用户协议 */}
         <div className="space-y-2">
           <Label className="font-bold text-lg">用户协议</Label>
-          <RichTextEditor value={userAgreement} onChange={setUserAgreement} />
+          <textarea
+            className="w-full h-40 border rounded-md p-2"
+            value={userAgreement}
+            onChange={(e) => setUserAgreement(e.target.value)}
+          />
         </div>
 
         {/* 隐私政策 */}
         <div className="space-y-2">
           <Label className="font-bold text-lg">隐私政策</Label>
-          <RichTextEditor value={privacyPolicy} onChange={setPrivacyPolicy} />
+          <textarea
+            className="w-full h-40 border rounded-md p-2"
+            value={privacyPolicy}
+            onChange={(e) => setPrivacyPolicy(e.target.value)}
+          />
         </div>
 
         <Button className="mt-4" onClick={exportConfig}>
@@ -186,6 +194,5 @@ export default function QiuAppEditor() {
         </section>
       </div>
     </div>
-    </MantineProvider>
   );
 }
