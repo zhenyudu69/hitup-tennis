@@ -1,0 +1,20 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="320" rx="28" fill="#052626" />
+  <rect x="22" y="22" width="276" height="276" rx="16" fill="#0F172A" stroke="#2DD4BF" stroke-width="6" />
+  <g fill="#2DD4BF" opacity="0.9">
+    <rect x="50" y="50" width="64" height="64" rx="10" />
+    <rect x="206" y="50" width="64" height="64" rx="10" />
+    <rect x="50" y="206" width="64" height="64" rx="10" />
+  </g>
+  <g fill="#14B8A6">
+    <rect x="130" y="130" width="24" height="24" />
+    <rect x="158" y="130" width="24" height="24" />
+    <rect x="186" y="130" width="24" height="24" />
+    <rect x="214" y="130" width="24" height="24" />
+    <rect x="130" y="158" width="24" height="24" />
+    <rect x="158" y="186" width="24" height="24" />
+    <rect x="186" y="214" width="24" height="24" />
+    <rect x="214" y="186" width="24" height="24" />
+  </g>
+  <text x="160" y="302" text-anchor="middle" fill="#CCFBF1" font-family="Inter, system-ui" font-size="18" font-weight="700">WhatsApp · Spring</text>
+</svg>
